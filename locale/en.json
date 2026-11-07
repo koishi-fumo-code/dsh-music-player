@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Music player",
+    "description": "A sidebar entry opens a playback panel in the main workspace: local files, playlist, cover art, seek, volume, shuffle and repeat, an 18-band equalizer with foobar2000 presets, and software DSD (DSF/DFF) decoding to PCM. Settings cover display, search, tags and DSD."
+  }
+}

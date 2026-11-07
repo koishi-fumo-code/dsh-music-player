@@ -1,0 +1,62 @@
+{
+  "name": "dsh-music-player",
+  "version": "0.4.0",
+  "private": true,
+  "description": "DSH 插件：本地音乐播放器 —— 左侧栏图标进入，选本机音频文件播放；播放列表、封面、进度、音量、顺序/循环/随机；18 段均衡器（预设取自 foobar2000 的 .feq）+ DSD(DSF/DFF) 软解成 PCM；零依赖、零联网、文件不上传，带一键安装器可换机即装",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "scripts/install.mjs",
+    "scripts/portability-check.mjs",
+    "scripts/make-tgz.mjs",
+    "scripts/simulate-foreign-pc.mjs"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "music",
+    "player",
+    "audio",
+    "dsd",
+    "equalizer"
+  ],
+  "engines": {
+    "dsh": ">=0.1.7-rc.1",
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "scripts": {
+    "install-plugin": "node scripts/install.mjs",
+    "uninstall-plugin": "node scripts/install.mjs --uninstall",
+    "check": "node scripts/portability-check.mjs",
+    "pack": "node scripts/make-tgz.mjs --verify",
+    "verify-foreign": "node scripts/simulate-foreign-pc.mjs"
+  },
+  "author": "koishi-fumo-code",
+  "license": "MIT"
+}
