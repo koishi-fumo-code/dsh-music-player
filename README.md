@@ -4,6 +4,8 @@
 参考 foobar2000 / foobox 的播放列表 + 封面 + 传输条 + 18 段均衡器，但全部跑在浏览器里：
 **零联网、零依赖、文件不上传**。
 
+▶ 介绍视频（2 分 19 秒）：[dsh-music-player-intro.mp4](https://github.com/koishi-fumo-code/dsh-music-player/releases/download/v0.4.0/dsh-music-player-intro.mp4)
+
 ## 装
 
 ### 方式一：本机开发用（插件管理器）
@@ -61,10 +63,10 @@ node scripts/make-tgz.mjs --verify    # 产出 dist/*.tgz 并再验一次
 - **播放顺序**（对齐 foobar 的 Playback order）：
   顺序播放 → 列表循环 → 单曲循环 → 随机播放。
 - **18 段均衡器**（对齐 foobar 的 `foo_dsp_eq`）：
-  频段 55 Hz ~ 16 kHz，±20 dB；**20 个预设直接取自本机 `D:\foobar2000\Equalizer Presets\*.feq`**
-  （Flat / 1965 / Air / Brittle / Car Stereo / Classic V / Clear / Dark / DEATH / Drums /
-  Home Theater / Loudness / Metal / Pop / Premaster / Presence / Punch & Sparkle / Shimmer /
-  Soft Bass / Strings），另有预增益与「自定义」。
+  频段 55 Hz ~ 16 kHz，±20 dB；**20 个预设取自 foobar2000 的 `Equalizer Presets` 目录**
+  （.feq 文件原值照搬：Flat / 1965 / Air / Brittle / Car Stereo / Classic V / Clear / Dark /
+  DEATH / Drums / Home Theater / Loudness / Metal / Pop / Premaster / Presence /
+  Punch & Sparkle / Shimmer / Soft Bass / Strings），另有预增益与「自定义」。
 - **DSD 软解**：DSF 与未压缩 DFF（DSD64/128/256）→ 抽取成 44.1k PCM → WAV → 播放。
 - **设置项**（存 `localStorage`）：默认播放顺序、停止回曲首、自动下一首、
   列表显示项（序号/歌手/时长/紧凑）、搜索范围、读标签/读封面、DSD 软解开关、
